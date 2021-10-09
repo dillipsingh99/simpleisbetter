@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %}
+<div class="container" style="background:rgb(221, 199, 171);">
+    <div class="row p-4">
+        <h3>Complete your profile</h3>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form.media}}
+            {{ form | crispy }}
+            <input type="submit"  class="btn btn-outline-info" name="" value="Update">
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

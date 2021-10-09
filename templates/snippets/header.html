@@ -1,0 +1,56 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+	<div class="container-fluid">
+	  <a class="navbar-brand text-white" href="{% url 'home' %}"><h1 style="color:yellow;">Simple<span style="color:rgb(240, 243, 240);">Is</span><span style="color:rgb(90, 23, 23);">Better</span></h1></a>
+	  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+		  <li class="nav-item">
+			<a class="nav-link active text-white " aria-current="page" href="{% url 'home' %}">Home</a>
+		  </li>
+		  <li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle text-white " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			  Blog
+			</a>
+			<ul class="dropdown-menu bg-danger" aria-labelledby="navbarDropdown">
+			  <li><a class="dropdown-item text-white" href="{% url 'blog_home' %}">Blog List</a></li>
+			  <li><a class="dropdown-item text-white" href="{% url 'blog_create' %}">Create New Blog</a></li>
+			  <li><hr class="dropdown-divider"></li>
+			  <li><a class="dropdown-item text-white" href="#">Something else here</a></li>
+			</ul>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link active text-white " aria-current="page" href="{% url 'about' %}">About</a>
+		  </li>
+		</ul>
+		<div class="d-flex">
+			{% if request.user.is_authenticated %}
+			<div class="dropdown dropleft show p-2">
+				<div class="d-flex flex-row">
+					<div class="btn-group dropleft p-2">
+						<div class="d-flex notifications-icon-container rounded-circle align-items-center mr-3" id="id_notification_dropdown_toggle" data-toggle="dropdown" onclick="setGeneralNotificationsAsRead()">
+							<span id="id_general_notifications_count" class="notify-badge"></span>
+							<span class="d-flex material-icons notifications-material-icon m-auto align-items-center text-white">{{user.username}}</span>
+							<div class="dropdown-menu scrollable-menu" aria-labelledby="id_notification_dropdown_toggle" id="id_general_notifications_container">										
+							</div>
+						</div>
+					</div>
+					<div class="btn-group p-2">
+						<img id="id_profile_links" class="account-image rounded-circle m-auto d-block dropdown-toggle" id="id_profile_links" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="{% static 'codingwithdk/dummy_robort.png' %}" alt="Bloggingwithdk" width="40" height="40">
+						<div class="dropdown-menu bg-danger text-white" aria-labelledby="id_profile_links">
+							<a class="dropdown-item text-white" href="{% url 'account' user.id %}">Account</a>
+							<a class="dropdown-item text-white" href="{% url 'logout' %}">Logout</a>
+						</div>
+					</div>
+				</div>						
+			</div>
+			{% else %}
+				<a class="btn btn-outline-danger text-white" href="{% url 'login' %}">Login</a>
+				<a class="btn btn-outline-danger text-white" href="{% url 'register' %}">Register</a>
+			{% endif %}	
+		</div>
+	  </div>
+	</div>
+  </nav>

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row p-4" style="background:rgb(221, 199, 171);">
+   
+        <h2><Strong>{{ data.title }}</Strong></h2>
+        <P><a><strong>{{data.author }}</strong></a> | <a>{{ data.publish_date }}</a></P>
+        <div style='padding:3rem' class="card-footer text-center text-muted">
+                <img class="img-fluid" src="{{data.post_image.url}}" alt="Smiley face">
+        </div>
+        <p>{{ data.description|safe }}</p>
+        <p>{{ data.body|safe }}</p> 
+        <button type="button" class="btn btn-outline-danger text-white"><a href="{% url 'blog_update' data.pk%}">Blog Edit</a></button>
+        <button type="button" class="btn btn-outline-danger text-white"><a href="{% url 'blog_delete' data.pk%}">Blog Delete</a></button>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form.media}}
+            {{ form | crispy }}
+            <input class="btn btn-outline-success" type="submit" value="Save">
+        </form>
+        <div class="cloumn">
+            
+            {% for comment in comments %}
+                <a><strong>{{comment.author}}</strong></a> | <a>{{comment.created_at}}</a>
+                <p>{{comment.comment|safe}}</p>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}

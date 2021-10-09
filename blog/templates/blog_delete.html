@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row p-4" style="background:rgb(221, 199, 171);">
+        <h1><strong>Delete BLog Post</strong></h1>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>Are sure you want to delete.</p>
+            <h2><a href=""><strong>{{ blog.title }}</strong></a></h2>
+                <a><strong>{{blog.author }}</strong></a> | <a>{{ blog.publish_date }}</a>
+            <div style='padding:3rem' class="card-footer text-center text-muted">
+                <img src="{{blog.post_image.url}}" class="img-fluid" alt="Smiley face">
+            </div>
+                <p>{{ blog.description|safe }}</p>
+            <input class="btn btn-outline-success" type="submit" value="Confirm">
+            </form>
+
+    </div>
+</div>
+    
+
+
+{% endblock content %}

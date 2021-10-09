@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'home/sec.png' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-md-block d-sm-block">
+              <h1><strong>Simple Is Better</strong></h1>
+              <h5>This is just a demo page setup with bootstrap<h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'home/security.jfif' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-md-block d-sm-block">
+                <h1><strong>Simple Is Better</strong></h1>
+                <h5>This is just a demo page setup with bootstrap<h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'home/tech1.png' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-md-block d-sm-block">
+                <h1><strong>Simple Is Better</strong></h1>
+                <h5>This is just a demo page setup with bootstrap<h5>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+<div class="container-fluid">
+    <div class="row bg-secondary text-white p-4 text-align-center">
+            <h1 class="m-auto p-2">SimpleIsBetter</h1>
+            <p class="lead p-2">A Blogging like website built with Django.</p>
+            <p class="lead">
+            <a class="btn btn-outline-warning" href="{% url 'blog_create' %}"
+            role="button">Create your Article here !</a>
+            </p>
+            <p class="lead">
+              <a class="btn btn-outline-info" href="{% url 'blog_home' %}"
+              role="button">See articles here !</a>
+            </p>
+    </div>
+</div>
+<style type="text/css">
+
+    .card-signin {
+        width: 100%;
+        max-width: 400px;
+        padding: 15px;
+        margin: auto;
+    }
+</style>
+  
+<div class="container-fluid p-4">
+    <div class="row justify-content-center">
+        <div class="card card-signin bg-secondary">
+            <div class="card-body bg-secondary">
+                  <div class="d-flex flex-column pb-3">
+                  <img class="img-fluid mx-auto d-block" src="{% static 'home/python1.jfif' %}" alt="python logo" width="300" height="300">
+                  </div>
+                  <div class="d-flex flex-column my-4">
+                        <h4 class="m-auto text-align-center" style="color:#000000;"><strong>Python</strong></h4>
+                        <p class="m-auto">Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together</p>
+                        <a class="m-auto" href="https://www.python.org/">Python</a>
+                  </div>
+            </div>
+        </div>
+          
+    </div>
+</div>
+    
+<div class="container-fluid p-4">
+    <div class="row justify-content-center">
+        <div class="card card-signin bg-secondary">
+          <div class="card-body bg-secondary">
+                <div class="d-flex flex-column pb-3">
+                <img class="img-fluid mx-auto d-block" src="{% static 'home/django.jpg' %}" alt="python logo" width="300" height="300">
+                </div>
+                <div class="d-flex flex-column my-4">
+                    <h4 class="m-auto text-align-center" style="color:#000000;"><strong>Django</strong></h4>
+                    <p class="m-auto">Django is a Python-based free and open-source web framework that follows the model-template-views (MTV) architectural pattern. It is maintained by the Django Software Foundation (DSF), an American independent organization established as a 501 (c) (3) non-profit.</p>
+                    <a class="m-auto" href="https://www.djangoproject.com/">Django</a>
+                </div>
+          </div>
+        </div>
+        
+    </div>
+</div>
+<div class="container-fluid p-4">
+    <div class="row justify-content-center">
+        <div class="card card-signin bg-secondary">
+          <div class="card-body bg-secondary">
+                <div class="d-flex flex-column pb-3">
+                <img class="img-fluid mx-auto d-block" src="{% static 'home/javascript.png' %}" alt="python logo" width="300" height="300">
+                </div>
+                <div class="d-flex flex-column my-4">
+                    <h4 class="m-auto text-align-center" style="color:#000000;"><strong>JavaScript</strong></h4>
+                    <p class="m-auto">JavaScript is a scripting language used to create and control dynamic website content, i.e. anything that moves, refreshes, or otherwise changes on your screen without requiring you to manually reload a web page.</p>
+                    <a class="m-auto" href="https://www.javascript.com/">Javascript</a>
+                </div>
+          </div>
+        </div>
+        
+    </div>
+</div>
+<div class="container-fluid p-4">
+    <div class="row justify-content-center">
+        <div class="card card-signin bg-secondary">
+          <div class="card-body bg-secondary">
+                <div class="d-flex flex-column pb-3">
+                <img class="img-fluid mx-auto d-block" src="{% static 'home/bootstrap.jfif' %}" alt="python logo" width="300" height="300">
+                </div>
+                <div class="d-flex flex-column my-4">
+                    <h4 class="m-auto text-align-center" style="color:#000000;"><strong>Bootstrap</strong></h4>
+                    <p class="m-auto">Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS - and (optionally) JavaScript -based design templates for typography, forms, buttons, navigation, and other interface components.</p>
+                    <a class="m-auto" href="https://getbootstrap.com/">Bootstrap</a>
+                </div>
+          </div>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock content %}

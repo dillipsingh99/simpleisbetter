@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row p-4" style="background:rgb(221, 199, 171);">
+        <h1><strong>Create your new post here.</strong></h1>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.media }}
+            {{ form|crispy }}
+            <input class="btn btn-outline-success" type="submit" value="Save">
+        </form>
+    </div>
+</div>
+   
+        
+   
+
+{% endblock content %}
