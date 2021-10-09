@@ -28,7 +28,7 @@ DEBUG = True
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # development only
 
-ALLOWED_HOSTS = ['simpleisbetterapp.herokuapp./com']
+ALLOWED_HOSTS = ['simpleisbetterapp.herokuapp.com']
 
 
 # Application definition
