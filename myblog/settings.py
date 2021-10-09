@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+import dj_database_url 
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +28,7 @@ DEBUG = True
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # development only
 
-ALLOWED_HOSTS = ['simpleisbetterapp']
+ALLOWED_HOSTS = ['simpleisbetterapp.herokuapp.com']
 
 
 # Application definition
@@ -176,6 +177,6 @@ LOGIN_URL = 'login'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 #Database configurations
-import dj_database_url 
+
 prod_db  =  dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
