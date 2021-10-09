@@ -46,9 +46,8 @@ class BlogCreateView(LoginRequiredMixin, CreateView):
     fields = ('title','description', 'body', 'post_image', 'author',)
     success_url = reverse_lazy('blog_home')
     LOGIN_URL = 'login'
-    # redirect_field_name = 'login'
 
-    def form_valid(self, form): # new
+    def form_valid(self, form): 
           form.instance.author = self.request.user
           return super().form_valid(form)
 

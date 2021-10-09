@@ -78,8 +78,6 @@ def get_redirect_if_exists(request):
 def account(request, id):
     context = {}
     data = Account.objects.get(id=id)
-    # if request.user.is_authenticated:
-    #     data = Account.objects.get(id=request.user.id)
     context['data'] = data
     return render(request, 'account/account.html', context)
 
