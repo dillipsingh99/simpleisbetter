@@ -4,7 +4,7 @@ from django.core.files.storage import FileSystemStorage
 from django.conf import settings
 import os
 from django.urls import reverse
-
+from phone_field import PhoneField
 
 class MyAccountManager(BaseUserManager):
 	def create_user(self, email, username, password=None):
@@ -45,7 +45,7 @@ class Account(AbstractBaseUser):
     email = models.EmailField(verbose_name="email", max_length=60, unique=True)
     username = models.CharField(max_length=30, unique=True)
     age = models.PositiveIntegerField(null=True, blank=True, default=None)
-    contact_number = models.PositiveIntegerField(null=True, blank=True, default=None)
+    contact_number = PhoneField(blank=True, help_text='Contact phone number', default=None)
     profile_image = models.ImageField(max_length=255, upload_to=get_profile_image_filepath, null=True, blank=True, default=get_default_profile_image)
     address = models.CharField(max_length=200,null=True, blank=True, default=None)
     education = models.CharField(max_length=200,null=True, blank=True, default=None)

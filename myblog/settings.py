@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['simpleisbetterapp.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'phone_field',
     'crispy_forms',
     'ckeditor_uploader',
     'ckeditor',
