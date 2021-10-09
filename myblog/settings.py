@@ -28,7 +28,7 @@ DEBUG = True
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # development only
 
-ALLOWED_HOSTS = ['simpleisbetterapp.herokuapp.com']
+ALLOWED_HOSTS = ['simpleisbetterapp.herokuapp./com']
 
 
 # Application definition
@@ -137,8 +137,8 @@ AUTH_USER_MODEL = 'account.Account'
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
 
 TEMP = os.path.join(BASE_DIR, 'media_cdn/temp')
 #  Add configuration for static files storage using whitenoise
