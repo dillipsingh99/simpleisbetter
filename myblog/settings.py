@@ -27,7 +27,7 @@ DEBUG = True
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # development only
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['simpleisbetterapp']
 
 
 # Application definition
@@ -174,3 +174,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ##############################
 LOGIN_URL = 'login'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+#Database configurations
+import dj_database_url 
+prod_db  =  dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
